@@ -30,7 +30,8 @@ app.get('/NumberManagement', async (req, res) => {
 async function processUrls(urls) {
   const promises = urls.map(fetchNumbers);
   const res = await Promise.all(promises);
-  const un = Array.from(new Set(res.flat())).sort((a, b) => a - b);
+  const a= Array.from(new Set(res.flat()));
+  const un = a.sort((a, b) => a - b);
   return un;
 }
 
